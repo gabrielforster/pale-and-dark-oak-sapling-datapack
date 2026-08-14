@@ -1,4 +1,4 @@
-NAME := pale-oak-saplings
+NAME := oak-sapling-boost
 ZIP := $(NAME).zip
 
 .PHONY: build clean

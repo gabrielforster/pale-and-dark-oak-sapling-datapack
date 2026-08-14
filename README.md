@@ -1,4 +1,4 @@
-# Pale Oak Saplings
+# Oak Sapling Boost
 
 Datapack for Minecraft Java Edition 26.2. Bumps Pale Oak and Dark Oak Sapling drop chance +5 percentage points over vanilla's default, per Fortune tier, so both trees are easier to keep sustainable without going overboard.
 
@@ -43,21 +43,21 @@ Loot tables run per-block, with no knowledge of sibling blocks or which tree the
 
 ## Install
 
-Copy the `pale-oak-saplings` folder into your world's datapacks directory:
+Copy the `oak-sapling-boost` folder into your world's datapacks directory:
 
 ```
-<server_root>/<level-name>/datapacks/pale-oak-saplings/
+<server_root>/<level-name>/datapacks/oak-sapling-boost/
 ```
 
 `level-name` comes from `server.properties` (default: `world`), so typically:
 
 ```
-world/datapacks/pale-oak-saplings/
+world/datapacks/oak-sapling-boost/
 ```
 
 ## Verify
 
-- `/datapack list` — should list `file/pale-oak-saplings` as enabled.
+- `/datapack list` — should list `file/oak-sapling-boost` as enabled.
 - `/reload` — reloads datapacks without a server restart if added while running.
 
 ## Test
@@ -74,7 +74,7 @@ For a statistical check, run the following many times (repeating command block, 
 ## Files
 
 ```
-pale-oak-saplings/
+oak-sapling-boost/
 ├── pack.mcmeta
 ├── README.md
 └── data/

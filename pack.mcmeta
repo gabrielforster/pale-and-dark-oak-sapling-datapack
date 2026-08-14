@@ -1,6 +1,6 @@
 {
   "pack": {
-    "description": "Pale Oak Saplings - Pale Oak Leaves drop Pale Oak Saplings at ~15% chance per leaf, unaffected by Fortune",
+    "description": "Oak Sapling Boost - Pale Oak and Dark Oak Leaves drop saplings at +5 percentage points over vanilla, per Fortune tier",
     "min_format": 107,
     "max_format": 107
   }
