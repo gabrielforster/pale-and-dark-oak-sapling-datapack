@@ -3,9 +3,7 @@ ZIP := $(NAME).zip
 
 .PHONY: build clean
 
-build: $(ZIP)
-
-$(ZIP): pack.mcmeta data
+build:
 	rm -f $(ZIP)
 	zip -r $(ZIP) pack.mcmeta data -x '*.DS_Store'
 
