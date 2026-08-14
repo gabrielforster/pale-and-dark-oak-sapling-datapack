@@ -1,41 +1,41 @@
 # Pale Oak Saplings
 
-Datapack for Minecraft Java Edition 26.2. Makes Pale Oak Leaves drop Pale Oak Saplings at a much higher, fixed rate so Pale Oak trees are sustainable to farm.
+Datapack for Minecraft Java Edition 26.2. Bumps Pale Oak and Dark Oak Sapling drop chance 7% over vanilla's default, per Fortune tier, so both trees are easier to keep sustainable without going overboard.
 
 ## What it does
 
-Overrides `minecraft:blocks/pale_oak_leaves` loot table:
+Overrides two loot tables:
 
-- **Pale Oak Sapling drop chance: 15% flat per leaf broken.**
-- **Fortune does not affect this chance** — hand, plain tool, or Fortune III all roll the same 15%.
+- `minecraft:blocks/pale_oak_leaves`
+- `minecraft:blocks/dark_oak_leaves`
+
+For both:
+
+- **Sapling drop chance is vanilla's default × 1.07, per Fortune tier** — Fortune still scales it up like vanilla, just from a higher floor.
 - Works when leaves are destroyed by **explosions** (TNT, etc.), not just hand-breaking.
 - Shearing / Silk Touch still drops the leaves block itself, same as vanilla.
-- Stick drops (Fortune-scaled, ~2-10%) are untouched.
-- Only Pale Oak is affected — no other leaf type is modified.
+- Stick drops (and Apple drops, Dark Oak only) are untouched.
+- No other leaf type is modified.
 
 ## Drop rates: default vs this datapack
 
-Vanilla Pale Oak Sapling chance scales with Fortune (table_bonus), same formula as every other oak-family leaf:
-
-| Fortune level | Vanilla default | This datapack |
+| Fortune level | Vanilla default | This datapack (+7%) |
 |---|---|---|
-| None | 5% | **15%** |
-| I | 6.25% | **15%** |
-| II | 8.33% | **15%** |
-| III | 10% | **15%** |
+| None | 5% | **5.35%** |
+| I | 6.25% | **6.6875%** |
+| II | 8.33% | **8.916667%** |
+| III | 10% | **10.7%** |
 
-15% is ~1.5x-3x vanilla depending on Fortune level, tuned high on purpose for a no-Fortune-farming sustainable loop. Feels overtuned? Lower `chance` in `data/minecraft/loot_table/blocks/pale_oak_leaves.json` (pool 0 → sapling entry → `random_chance`) to taste — e.g. `0.1` lands close to vanilla's Fortune III rate but flat at every Fortune level, `0.06` sits near vanilla's no-Fortune/Fortune-I range.
+Same table for both Pale Oak and Dark Oak — vanilla uses the identical sapling formula for every oak-family leaf, and the +7% is applied identically to both.
 
-### Dark Oak, for reference (untouched, not shipped by this datapack)
+Dark Oak also keeps its untouched vanilla Apple drop, for reference:
 
-Dark Oak Leaves share the exact same base sapling formula as Pale Oak in vanilla 26.2, plus an apple drop Pale Oak doesn't have:
-
-| Drop | Fortune 0 | I | II | III |
-|---|---|---|---|---|
-| Sapling | 5% | 6.25% | 8.33% | 10% |
-| Apple | 0.5% | 0.556% | 0.625% | 0.833% |
-
-This datapack does not touch Dark Oak — listed only as a reference point for the numbers above.
+| Fortune level | Apple (unchanged) |
+|---|---|
+| None | 0.5% |
+| I | 0.556% |
+| II | 0.625% |
+| III | 0.833% |
 
 ## Why not "guarantee N saplings per tree"
 
@@ -62,12 +62,13 @@ world/datapacks/pale-oak-saplings/
 
 ## Test
 
-In creative, break 30-40 Pale Oak Leaves with a bare hand or non-shear/non-silk-touch tool. Expect roughly 4-6 saplings (~15%).
+In creative, break 50+ Pale Oak (or Dark Oak) Leaves with a bare hand or non-shear/non-silk-touch tool, no Fortune. Expect roughly 1 in 19 to be a sapling (~5.35%).
 
 For a statistical check, run the following many times (repeating command block, or looped via a `/function`) and count sapling drops:
 
 ```
 /loot spawn ~ ~ ~ loot blocks/pale_oak_leaves
+/loot spawn ~ ~ ~ loot blocks/dark_oak_leaves
 ```
 
 ## Files
@@ -80,7 +81,8 @@ pale-oak-saplings/
     └── minecraft/
         └── loot_table/
             └── blocks/
-                └── pale_oak_leaves.json
+                ├── pale_oak_leaves.json
+                └── dark_oak_leaves.json
 ```
 
 ## Compatibility
