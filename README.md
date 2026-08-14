@@ -1,6 +1,6 @@
 # Pale Oak Saplings
 
-Datapack for Minecraft Java Edition 26.2. Bumps Pale Oak and Dark Oak Sapling drop chance 7% over vanilla's default, per Fortune tier, so both trees are easier to keep sustainable without going overboard.
+Datapack for Minecraft Java Edition 26.2. Bumps Pale Oak and Dark Oak Sapling drop chance +7 percentage points over vanilla's default, per Fortune tier, so both trees are easier to keep sustainable without going overboard.
 
 ## What it does
 
@@ -11,7 +11,7 @@ Overrides two loot tables:
 
 For both:
 
-- **Sapling drop chance is vanilla's default × 1.07, per Fortune tier** — Fortune still scales it up like vanilla, just from a higher floor.
+- **Sapling drop chance is vanilla's default + 7 percentage points, per Fortune tier** — Fortune still scales it up like vanilla, just from a higher floor.
 - Works when leaves are destroyed by **explosions** (TNT, etc.), not just hand-breaking.
 - Shearing / Silk Touch still drops the leaves block itself, same as vanilla.
 - Stick drops (and Apple drops, Dark Oak only) are untouched.
@@ -19,14 +19,14 @@ For both:
 
 ## Drop rates: default vs this datapack
 
-| Fortune level | Vanilla default | This datapack (+7%) |
+| Fortune level | Vanilla default | This datapack (+7pp) |
 |---|---|---|
-| None | 5% | **5.35%** |
-| I | 6.25% | **6.6875%** |
-| II | 8.33% | **8.916667%** |
-| III | 10% | **10.7%** |
+| None | 5% | **12%** |
+| I | 6.25% | **13.25%** |
+| II | 8.33% | **15.33%** |
+| III | 10% | **17%** |
 
-Same table for both Pale Oak and Dark Oak — vanilla uses the identical sapling formula for every oak-family leaf, and the +7% is applied identically to both.
+Same table for both Pale Oak and Dark Oak — vanilla uses the identical sapling formula for every oak-family leaf, and the +7pp is applied identically to both.
 
 Dark Oak also keeps its untouched vanilla Apple drop, for reference:
 
@@ -62,7 +62,7 @@ world/datapacks/pale-oak-saplings/
 
 ## Test
 
-In creative, break 50+ Pale Oak (or Dark Oak) Leaves with a bare hand or non-shear/non-silk-touch tool, no Fortune. Expect roughly 1 in 19 to be a sapling (~5.35%).
+In creative, break 30+ Pale Oak (or Dark Oak) Leaves with a bare hand or non-shear/non-silk-touch tool, no Fortune. Expect roughly 1 in 8 to be a sapling (~12%).
 
 For a statistical check, run the following many times (repeating command block, or looped via a `/function`) and count sapling drops:
 
